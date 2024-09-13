@@ -11,7 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://gregeatypique:Wr-8x27gzpCqR_c@todolist.9zfsq.mongodb.net/taches', {
+// mongoose.connect('mongodb+srv://gregeatypique:Wr-8x27gzpCqR_c@todolist.9zfsq.mongodb.net/taches', {
+  mongoose.connect('mongodb+srv://gregeatypique:Wr-8x27gzpCqR_c@todolist.9zfsq.mongodb.net/?retryWrites=true&w=majority&appName=ToDoList', {
+
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'))
