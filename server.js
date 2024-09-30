@@ -14,6 +14,7 @@ connectDB();
 
 // Routes
 app.use('/tasks', require('./routes/task'));  // Utiliser les routes pour les tâches
+app.use('/users', require('./routes/user'));  // Routes des utilisateurs
 
 // Start the server
 app.listen(port, () => {

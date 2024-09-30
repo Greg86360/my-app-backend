@@ -1,27 +1,31 @@
 const express = require('express');
 const Task = require('../models/Task'); // Assure-toi d'avoir un modèle Task défini
+const auth = require('../middleware/auth');  // Importer le middleware d'authentification
 const router = express.Router();
 
-// Route GET pour obtenir toutes les tâches
-router.get('/', async (req, res) => {
-  try {
-    const tasks = await Task.find();
-    res.json(tasks);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
+// Route GET pour obtenir toutes les tâches (protégée par auth)
+router.get('/', auth, async (req, res) => {
+    try {
+      const tasks = await Task.find({ user: req.user });
+      res.json(tasks);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  });
 
-// Route POST pour créer une nouvelle tâche
-router.post('/', async (req, res) => {
-  const newTask = new Task(req.body);
-  try {
-    await newTask.save();
-    res.json(newTask);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
+// Route POST pour créer une nouvelle tâche (protégée par auth)
+router.post('/', auth, async (req, res) => {
+    const newTask = new Task({
+      ...req.body,
+      user: req.user,  // Associer la tâche à l'utilisateur connecté
+    });
+    try {
+      await newTask.save();
+      res.json(newTask);
+    } catch (err) {
+      res.status(400).json({ message: err.message });
+    }
+  });
 
 // Route PUT pour mettre à jour une tâche existante
 router.put('/:id', async (req, res) => {
