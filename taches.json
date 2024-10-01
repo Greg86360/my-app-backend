@@ -9,14 +9,14 @@
     {
         "titre": "Réviser les objectifs du projet",
         "frequence": "Une fois par jour",
-        "etat":false
-        
+        "etat":false,
+        "user":"66fba9d058eca26a3319e918"
     },
     {
         "titre": "Préparer la réunion de demain",
         "frequence": "Tous les jours",
-        "etat":true
-
+        "etat":true,
+        "user":"66fa899b2c9c465064cefb76"  
     },
     {
         "titre": "Mettre à jour la documentation",
@@ -27,37 +27,40 @@
     {
         "titre": "Configurer le nouveau serveur",
         "frequence":  "Une fois par jour",
-        "etat":true
-
+        "etat":true,
+        "user":"66fba9d058eca26a3319e918"
     },
     {
         "titre": "Analyser les retours des utilisateurs",
         "frequence": "Matin et soir",
-        "etat":true
+        "etat":true,
+        "user":"66fba9d058eca26a3319e918"
 
     },
     {
         "titre": "Créer un plan de test",
         "frequence": "Matin et soir",
-        "etat":false
-        
+        "etat":false,
+        "user":"66fa899b2c9c465064cefb76"
     },
     {
         "titre": "Faire un audit de sécurité",
         "frequence": "2 fois par jour",
-        "etat":false
+        "etat":false,
+        "user":"66fa899b2c9c465064cefb76"
         
     },
     {
         "titre": "Déployer la nouvelle version",
         "frequence": "Une fois par mois",
-        "etat":true
+        "etat":true,
+        "user":"66fba9d058eca26a3319e918"
 
     },
     {
         "titre": "Organiser une formation pour l'équipe",
         "frequence": "Tous les jours",
-        "etat":false
-        
+        "etat":false,
+        "user":"66fa899b2c9c465064cefb76"
     }
 ]
